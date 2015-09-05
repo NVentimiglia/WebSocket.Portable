@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4026F013-E5A0-437F-8B1A-DC04F85EAEE4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSocket.Portable</RootNamespace>
+    <AssemblyName>WebSocket.Portable</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>b194347b</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Compression\BlockType.cs" />
+    <Compile Include="Compression\CompressionMode.cs" />
+    <Compile Include="Compression\CopyEncoder.cs" />
+    <Compile Include="Compression\DeflateInput.cs" />
+    <Compile Include="Compression\Deflater.cs" />
+    <Compile Include="Compression\DeflateStream.cs" />
+    <Compile Include="Compression\DeflateStreamAsyncResult.cs" />
+    <Compile Include="Compression\FastEncoder.cs" />
+    <Compile Include="Compression\FastEncoderStatics.cs" />
+    <Compile Include="Compression\FastEncoderWindow.cs" />
+    <Compile Include="Compression\HuffmanTree.cs" />
+    <Compile Include="Compression\IFileFormatReader.cs" />
+    <Compile Include="Compression\IFileFormatWriter.cs" />
+    <Compile Include="Compression\Inflater.cs" />
+    <Compile Include="Compression\InflaterState.cs" />
+    <Compile Include="Compression\InputBuffer.cs" />
+    <Compile Include="Compression\Match.cs" />
+    <Compile Include="Compression\MatchState.cs" />
+    <Compile Include="Compression\OutputBuffer.cs" />
+    <Compile Include="Compression\OutputWindow.cs" />
+    <Compile Include="Interfaces\IDataLayer.cs" />
+    <Compile Include="Interfaces\ITcpConnection.cs" />
+    <Compile Include="Interfaces\IWebSocket.cs" />
+    <Compile Include="Interfaces\IWebSocketExtension.cs" />
+    <Compile Include="Interfaces\IWebSocketExtensionParameter.cs" />
+    <Compile Include="Interfaces\IWebSocketFrame.cs" />
+    <Compile Include="Interfaces\IWebSocketMessage.cs" />
+    <Compile Include="Interfaces\IWebSocketPayload.cs" />
+    <Compile Include="Internal\ByteExtensions.cs" />
+    <Compile Include="Internal\ByteOrder.cs" />
+    <Compile Include="Internal\Consts.cs" />
+    <Compile Include="Internal\DataLayerExtensions.cs" />
+    <Compile Include="Internal\Log.cs" />
+    <Compile Include="Internal\LogManager.cs" />
+    <Compile Include="Internal\StringExtensions.cs" />
+    <Compile Include="Net\TcpConnectionBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ErrorCodes1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorCodes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ErrorMessages1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Sha1Digest.cs" />
+    <Compile Include="Tasks\TaskAsyncHelper.cs" />
+    <Compile Include="_Abstract\WebSocketBase.cs" />
+    <Compile Include="_Abstract\WebSocketClientBase.cs" />
+    <Compile Include="_Abstract\WebSocketClientFrame.cs" />
+    <Compile Include="_Abstract\WebSocketCompression.cs" />
+    <Compile Include="_Abstract\WebSocketErrorCode.cs" />
+    <Compile Include="_Abstract\WebSocketException.cs" />
+    <Compile Include="_Abstract\WebSocketFrame.cs" />
+    <Compile Include="_Abstract\WebSocketHelper.cs" />
+    <Compile Include="_Abstract\WebSocketMessage.cs" />
+    <Compile Include="_Abstract\WebSocketOpcode.cs" />
+    <Compile Include="_Abstract\WebSocketPayload.cs" />
+    <Compile Include="_Abstract\WebSocketRequestHandshake.cs" />
+    <Compile Include="_Abstract\WebSocketResponseHandshake.cs" />
+    <Compile Include="_Abstract\WebSocketServerFrame.cs" />
+    <Compile Include="_Abstract\WebSocketState.cs" />
+    <Compile Include="_Implementation\TcpConnection.cs" />
+    <Compile Include="_Implementation\WebSocket.cs" />
+    <Compile Include="_Implementation\WebSocketClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sockets.Plugin, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\rda.SocketsForPCL.1.2.2\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Sockets.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Sockets.Plugin.Abstractions, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\rda.SocketsForPCL.1.2.2\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Sockets.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ErrorCodes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorCodes1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ErrorMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

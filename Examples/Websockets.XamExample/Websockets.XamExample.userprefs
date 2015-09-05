@@ -1,0 +1,24 @@
+﻿<Properties StartupItem="Websockets.XamExample\Websockets.XamExample.Droid\Websockets.XamExample.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 5 (Lollipop)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Websockets.XamExample\Websockets.XamExample\Page1.cs">
+    <Files>
+      <File FileName="Websockets.XamExample\Websockets.XamExample\Page1.cs" Line="77" Column="4" />
+      <File FileName="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketClientBase.cs" Line="87" Column="1" />
+      <File FileName="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketBase.cs" Line="176" Column="1" />
+      <File FileName="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketRequestHandshake.cs" Line="1" Column="1" />
+      <File FileName="..\..\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketResponseHandshake.cs" Line="19" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketClientBase.cs" line="87" column="1" />
+      <Breakpoint file="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketBase.cs" line="154" column="1" />
+      <Breakpoint file="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketBase.cs" line="176" column="1" />
+      <Breakpoint file="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketBase.cs" line="164" column="1" />
+      <Breakpoint file="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketBase.cs" line="157" column="1" />
+      <Breakpoint file="e:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketBase.cs" line="155" column="1" />
+      <Breakpoint file="E:\Projects\Github\Websockets.Portable\WebSocket.Portable\WebSocket.Portable\_Abstract\WebSocketResponseHandshake.cs" line="19" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
