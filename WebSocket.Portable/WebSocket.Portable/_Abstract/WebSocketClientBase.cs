@@ -283,15 +283,15 @@ namespace WebSocket.Portable
                 }
                 catch (WebSocketException wsex)
                 {
-                    this.LogError("An web socket error occurred.", wsex);
-                    this.OnError(wsex);
                     break;
                 }
                 catch (ObjectDisposedException ex)
                 {
                     //https://github.com/rdavisau/sockets-for-pcl/issues/34
-                    this.LogError("An unexpected error occurred.", ex);
-                    this.OnError(ex);
+                    break;
+                }
+                catch (TaskCanceledException ex)
+                {
                     break;
                 }
                 catch (Exception ex)
