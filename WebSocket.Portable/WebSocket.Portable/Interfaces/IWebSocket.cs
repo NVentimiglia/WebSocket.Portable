@@ -13,6 +13,12 @@ namespace WebSocket.Portable.Interfaces
         void RegisterExtension(IWebSocketExtension extension);
 
         /// <summary>
+        /// Sets the SubProtocol for this websocket instance
+        /// </summary>
+        /// <param name="subProtocol">The SubProtocol</param>
+        void SetSubProtocol(string subProtocol);
+
+        /// <summary>
         /// Closes the socket asynchronous.
         /// </summary>
         /// <returns></returns>
