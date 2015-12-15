@@ -11,6 +11,7 @@ namespace WebSocket.Portable
     public abstract class WebSocketClientBase<TWebSocket> : IDisposable, ICanLog
         where TWebSocket : class, IWebSocket, new()
     {
+        private readonly string _subProtocol;
         protected TWebSocket _webSocket;
         private CancellationTokenSource _cts;
         private int _maxFrameDataLength = Consts.MaxDefaultFrameDataLength;
@@ -25,6 +26,12 @@ namespace WebSocket.Portable
         {
             this.AutoSendPongResponse = true;
         }
+
+        protected WebSocketClientBase(string subProtocol) : this()
+        {
+            _subProtocol = subProtocol;
+        }
+
         ~WebSocketClientBase()
         {
             this.Dispose(false);
@@ -95,6 +102,12 @@ namespace WebSocket.Portable
                 throw new InvalidOperationException("Client has been opened before.");
 
             _webSocket = new TWebSocket();
+
+            if (!string.IsNullOrEmpty(_subProtocol))
+            {
+                _webSocket.SetSubProtocol(_subProtocol);
+            }
+
             await _webSocket.ConnectAsync(uri, port, useSSL, cancellationToken);
             await _webSocket.SendHandshakeAsync(cancellationToken);
             this.ReceiveLoop();

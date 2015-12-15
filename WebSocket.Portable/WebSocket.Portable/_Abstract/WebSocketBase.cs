@@ -17,6 +17,7 @@ namespace WebSocket.Portable
     public abstract class WebSocketBase : ICanLog, IWebSocket
     {
         private readonly List<IWebSocketExtension> _extensions;
+        private string _subProtocol;
         private Uri _uri;
         private int _state;
         private ITcpConnection _tcp;
@@ -43,6 +44,11 @@ namespace WebSocket.Portable
                 throw new InvalidOperationException(ErrorMessages.InvalidState + _state);
 
             _extensions.Add(extension);
+        }
+
+        public void SetSubProtocol(string subProtocol)
+        {
+            _subProtocol = subProtocol;
         }
 
         public virtual Task CloseAsync(WebSocketErrorCode errorCode)
@@ -118,6 +124,11 @@ namespace WebSocket.Portable
             foreach (var extension in _extensions)
                 handshake.AddExtension(extension);
 
+            if (!string.IsNullOrEmpty(_subProtocol))
+            {
+                handshake.SecWebSocketProtocol = new[] {_subProtocol};
+            }
+            
             return this.SendHandshakeAsync(handshake, cancellationToken);
         }
 
