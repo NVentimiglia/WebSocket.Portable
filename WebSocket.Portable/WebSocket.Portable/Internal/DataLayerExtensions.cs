@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 using WebSocket.Portable.Interfaces;
@@ -15,7 +14,21 @@ namespace WebSocket.Portable.Internal
         public static async Task<byte[]> ReadAsync(this IDataLayer layer, int length, CancellationToken cancellationToken, WebSocketErrorCode errorCode)
         {
             var buffer = new byte[length];
-            var read = await layer.ReadAsync(buffer, 0, buffer.Length, cancellationToken);
+            var read = 0;
+
+            while (read < length && !cancellationToken.IsCancellationRequested)
+            {
+                var chunkOffset = read;
+                var chunkLength = length - chunkOffset;
+                var chunkSize = await layer.ReadAsync(buffer, chunkOffset, chunkLength, cancellationToken);
+
+                if (chunkSize == 0)
+                {
+                    break;
+                }
+
+                read += chunkSize;
+            }
 
             if (read != buffer.Length)
                 throw new WebSocketException(errorCode);
