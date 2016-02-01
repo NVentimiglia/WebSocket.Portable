@@ -1,6 +1,6 @@
 # DEPRECATED
 
-Please use [Websockets.Pcl](https://github.com/NVentimiglia/WebSocket.Pcl), a much improved version.
+Please use [Websockets.Pcl](https://github.com/NVentimiglia/WebSockets.Pcl), a much improved version.
 
 
 ## WebSocket.Portable
